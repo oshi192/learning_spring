@@ -9,15 +9,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @AllArgsConstructor
-@Table(name = "Person")//todo chack without name
 public class Person {
     @Id
     @GeneratedValue
-    @Column(name = "id", nullable = false)
+    @Column( nullable = false)
     private Long id;
-    @Column(name = "aGe", nullable = false)
+    @Column( nullable = false)
     private int age;
-    @Column (name = "name", nullable = false, length = 32)
+    @Column ( nullable = false, length = 32)
     private String name;
-
 }

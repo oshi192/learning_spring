@@ -41,4 +41,10 @@ public class MainController {
                     return personRepository.save(p);
                 });
     }
+
+    @GetMapping("/persons/find*")
+    List<Person> findByAge(@RequestParam String age){
+        if(age!=null && age.matches("[0-9]*"))return personRepository.findByAge(Integer.parseInt(age));
+        throw new PersonNotFoundEcxeption("invalid input parameter age:"+age);
+    }
 }
